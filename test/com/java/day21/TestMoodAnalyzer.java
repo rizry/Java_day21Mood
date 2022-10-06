@@ -19,4 +19,11 @@ public class TestMoodAnalyzer {
     assertEquals("HAPPY", mood);
   }
 
+  @Test(expected = NullPointerException.class)
+  public void testMessageForNullPointerException_thenHappy() {
+    MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+    String mood = moodAnalyzer.analyzeMood();
+    assertEquals("HAPPY", mood);
+  }
+
 }
