@@ -27,6 +27,7 @@ public class TestMoodAnalyzer {
       mood = moodAnalyzer.analyzeMood();
     } catch (MoodAnalysisException e) {
       System.out.println(e.getMessage());
+      assertEquals(MoodAnalysisException.ExceptionType.IS_NULL, e.excType);
     }
   }
 
@@ -38,6 +39,7 @@ public class TestMoodAnalyzer {
       mood = moodAnalyzer.analyzeMood();
     } catch (MoodAnalysisException e) {
       System.out.println(e.getMessage());
+      assertEquals(MoodAnalysisException.ExceptionType.IS_EMPTY, e.excType);
     }
   }
 
