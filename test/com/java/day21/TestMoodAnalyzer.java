@@ -30,4 +30,15 @@ public class TestMoodAnalyzer {
     }
   }
 
+  @Test
+  public void testMessageForEmptyMessage_thenHappy() {
+    MoodAnalyzer moodAnalyzer = new MoodAnalyzer("        ");
+    String mood = "";
+    try {
+      mood = moodAnalyzer.analyzeMood();
+    } catch (MoodAnalysisException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
 }
