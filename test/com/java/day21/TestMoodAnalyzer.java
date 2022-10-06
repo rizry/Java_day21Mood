@@ -20,10 +20,14 @@ public class TestMoodAnalyzer {
   }
 
   @Test
-  public void testMessageForNullPointerException_thenHappy() {
+  public void testMessageForNullMessage_thenHappy() {
     MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
-    String mood = moodAnalyzer.analyzeMood();
-    assertEquals("HAPPY", mood);
+    String mood = "";
+    try {
+      mood = moodAnalyzer.analyzeMood();
+    } catch (MoodAnalysisException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
 }
