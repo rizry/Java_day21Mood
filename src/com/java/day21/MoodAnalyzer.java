@@ -15,10 +15,9 @@ public class MoodAnalyzer {
   public String analyzeMood() {
     try {
       if (message.toLowerCase().contains("sad")) return "SAD";
-        else return "HAPPY";
+      else return "HAPPY";
     } catch (NullPointerException e) {
-      System.out.println("Cant determine mood. message is null.");
-      throw new NullPointerException();
+      return "HAPPY";
     }
   }
 }
